@@ -27,3 +27,11 @@ body {
 header {
     padding-bottom: 100px;
 }
+
+.nav--search {
+    padding: 40px 0;
+}
+
+.nav--pagination {
+    padding: 40px 0;
+}
