@@ -18,6 +18,12 @@ body {
     flex: 1 1 auto;
 }
 
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 header {
     padding-bottom: 100px;
 }
