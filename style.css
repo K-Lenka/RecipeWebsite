@@ -12,6 +12,19 @@ body {
     box-sizing: border-box;
 }
 
+header {
+    padding-bottom: 100px;
+}
+
+:root {
+    --prime: #c4acf9;
+    --prime-dark: #8568c5;
+    --highlight: #ff9e1cc2;
+}
+
+
+/*  */
+
 .wrapper {
     min-height: 100vh;
     display: flex;
@@ -25,17 +38,70 @@ body {
     padding: 1rem;
 }
 
-header {
-    padding-bottom: 100px;
-}
+
+/*  */
 
 .content {
     flex: 1 1 auto;
 }
 
-.nav--search {
-    padding: 40px 0;
+.recipe-search {
+    margin: 2rem 0;
 }
+
+.recipe--search-container {
+    margin: 1.2rem 0;
+    display: flex;
+    align-items: stretch;
+}
+
+.search-control,
+.search-btn {
+    width: 100%;
+}
+
+.search-control {
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    border: 1px solid var(--prime);
+    color: var(--prime);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+input[type='text']:focus {
+    outline: none;
+    border-color: var(--highlight);
+}
+
+.search-control::placeholder {
+    color: var(--prime);
+}
+
+.search-btn {
+    width: 80px;
+    height: 55px;
+    font-size: 1.8rem;
+    background: var(--prime);
+    color: #fff;
+    border: none;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+
+.search-btn:hover {
+    background: var(--prime-dark);
+    color: var(--highlight);
+}
+
+
+/*  */
 
 .nav--pagination {
     padding: 40px 0;
