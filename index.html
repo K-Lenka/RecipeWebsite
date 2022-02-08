@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +25,8 @@
                     <div class="container-fluid ">
                         <a class="navbar-brand " href="# ">Spoonacular</a>
                         <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarNav " aria-controls="navbarNav " aria-expanded="false " aria-label="Toggle navigation ">
-                <span class="navbar-toggler-icon "></span>
-              </button>
+                           <span class="navbar-toggler-icon "></span>
+                        </button>
                         <div class="collapse navbar-collapse " id="navbarNav ">
                             <ul class="navbar-nav ">
                                 <li class="nav-item ">
@@ -41,14 +42,18 @@
                 </nav>
             </header>
             <div class="content">
-                <nav class="navbar navbar-light nav--search">
-                    <div class="container-fluid d-flex align-items-center justify-content-center">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+
+                <div class="recipe-search">
+                    <h2 class="title">Find A Recipe By Ingredients</h2>
+
+                    <div class="recipe-search-box">
+                        <input type="text" class="search-control" placeholder="Enter an ingredient" id="search-input">
+                        <button type="submit" class="search-btn btn" id="search-btn">
+                        <i class = "fas fa-search"></i>
+                      </button>
                     </div>
-                </nav>
+                </div>
+
                 <div id="data">
 
                 </div>
