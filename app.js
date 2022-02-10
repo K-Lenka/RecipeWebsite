@@ -9,6 +9,51 @@ function htmlToElement(html) {
   return template.content.firstChild;
 }
 
+const buildSearchPage = () => {
+  const content = document.getElementById("content");
+
+  const searchDiv = htmlToElement(`
+  <div class="recipe-search">
+    <h2 class="title">Find A Recipe By Ingredients</h2>
+    <div class="recipe-search-container">
+      <input type="text" class="search-control" placeholder="Enter an ingredient" id="search-input">
+      <button type="submit" class="search-btn btn" id="search-btn">
+         <i class = "fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+  `);
+
+  const searcResult = htmlToElement(`
+  <div id="recipe-result">
+      <h2 class="title"> Your Search Results:</h2>
+      <div id="recipe-list">
+
+      </div>
+  </div>
+  `);
+
+  const navigation = htmlToElement(`
+  <nav class="d-flex justify-content-center nav-pagination" aria-label="Page navigation example ">
+  <ul class="pagination" id="pagination">
+      <li class="page-item arrows">
+          <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+          </a>
+      </li>
+       <li class="page-item arrows">
+          <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+          </a>
+      </li>
+  </ul>
+  </nav>
+  `);
+
+  content.append(searchDiv,searcResult,navigation);
+
+  buildSearchPage();
+
 // get food list
 async function getRecipies(offset = 0) {
   const input = document.getElementById("search-input").value.trim();
