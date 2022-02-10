@@ -52,6 +52,18 @@ const buildSearchPage = () => {
 
   content.append(searchDiv,searcResult,navigation);
 
+  const searchBtn = document.getElementById("search-btn");
+  const searchInput = document.getElementById("search-input");
+
+  searchBtn.addEventListener("click", () => getRecipies());
+
+  searchInput.addEventListener("keyup", function (e) {
+    if (e.key === "Enter") {
+      getRecipies();
+    }
+  });
+};
+
   buildSearchPage();
 
 // get food list
