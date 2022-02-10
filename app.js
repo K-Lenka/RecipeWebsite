@@ -80,6 +80,28 @@ async function getRecipies(offset = 0) {
   let html = "";
 
   let totalPages = Math.floor(data.totalResults / numOfRecipe);
+
+  // Create page number
+  const AddPages = function (pageNumber) {
+
+    const newLi = htmlToElement(`
+    <li class="page-item"><a class="page-link" href="#">${pageNumber + 1}</a></li>
+    `)
+
+    pagination.append(newLi);
+
+    newLi.addEventListener("click", () =>
+      getRecipies(pageNumber * numOfRecipe)
+    );
+
+    return pagination;
+  };
+
+  pagination.innerHTML = "";
+
+  for (let i = 0; i < totalPages; i++) {
+    AddPages(i);
+  }
   
   // Create recipe list
   if (data.results.length !== 0) {
