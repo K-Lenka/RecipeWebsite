@@ -14,9 +14,15 @@ searchInput.addEventListener('keyup', function(e){
 // get food list
 function getMealList() {
   let input = searchInput.value.trim();
+  const ApiKey = '0a0760ff66be4930825f532ce26fa3eb';
+  let numOfRecipe = 5;
+  let offsetNum = 0;
+  
+
+  
 
   fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=0a0760ff66be4930825f532ce26fa3eb&query=${input}&number=5&offset=0`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${ApiKey}&query=${input}&number=${numOfRecipe}&offset=${offsetNum}`
   )
     .then((response) => response.json())
     .then((data) => {
@@ -33,20 +39,16 @@ function getMealList() {
                     <a href = "#" class = "recipe-btn">Get Recipe</a>
                 </div>
             </div>`;
+    
         });
+
+        
       }
       recipeList.innerHTML = html;
-    });
+
+      
+    });  
+
 }
 
-// get recipe
 
-function getMealRecipe(e){
-  e.preventDefault();
-  if(e.target.classList.contains('recipe-btn')){
-      let mealItem = e.target.parentElement.parentElement;
-      fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
-      .then(response => response.json())
-      .then(data => mealRecipeModal(data.meals));
-  }
-}
