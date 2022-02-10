@@ -2,6 +2,13 @@
 const ApiKey = "a8e6be38c9af4d17bb5e9d1af913a291";
 const numOfRecipe = 5;
 
+function htmlToElement(html) {
+  var template = document.createElement("template");
+  html = html.trim(); 
+  template.innerHTML = html;
+  return template.content.firstChild;
+}
+
 // get food list
 async function getRecipies(offset = 0) {
   const input = document.getElementById("search-input").value.trim();
