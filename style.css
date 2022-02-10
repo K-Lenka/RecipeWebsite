@@ -185,6 +185,15 @@
         }
         /*  */
         
+        .notFound {
+            grid-template-columns: 1fr!important;
+            color: var(--highlight);
+            font-size: 1.8rem;
+            font-weight: 600;
+            width: 100%;
+        }
+        /*  */
+        
         .nav--pagination {
             padding: 40px 0;
         }
