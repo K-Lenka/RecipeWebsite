@@ -194,8 +194,12 @@
         }
         /*  */
         
-        .nav--pagination {
+        .nav-pagination {
             padding: 40px 0;
+        }
+        
+        .arrows {
+            display: none;
         }
         /* Media Queries */
         
